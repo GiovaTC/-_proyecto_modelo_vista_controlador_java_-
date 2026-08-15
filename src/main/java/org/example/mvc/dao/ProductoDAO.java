@@ -67,5 +67,43 @@ public class ProductoDAO  {
 
             return productos;
         }
-        
+
+        // BUSCAR POR ID
+    public Producto buscarPorId(int id) {
+
+        String sql = """
+                SELECT id, nombre, precio, cantidad
+                FROM productos
+                WHERE id = ?;
+                """;
+
+        try (Connection conexion = ConexionBD.obtenerConexion();
+             PreparedStatement statement =
+                     conexion.prepareStatement(sql)) {
+
+            statement.setInt(1, id);
+
+            try (ResultSet resultado = statement.executeQuery()) {
+
+                if (resultado.next()) {
+                    Producto producto = new Producto();
+
+                    producto.setId(resultado.getInt("id"));
+                    producto.setNombre(resultado.getString("nombre"));
+                    producto.setPrecio(resultado.getDouble("precio"));
+                    producto.setCantidad(resultado.getInt("cantidad"));
+
+                    return producto;
+                }
+            }
+        } catch (SQLException e) {
+
+            System.out.println("Error al buscar producto:");
+            System.out.println(e.getMessage());
+        }
+
+        return null;
+    }
+
+    // ACTUALIZAR .
 }
