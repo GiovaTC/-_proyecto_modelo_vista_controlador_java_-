@@ -106,4 +106,35 @@ public class ProductoDAO  {
     }
 
     // ACTUALIZAR.
+    public boolean actualizar(Producto producto) {
+
+        String sql = """
+                UPDATE productos
+                SET nombre = ?, precio = ?, cantidad = ?
+                WHERE id = ?;
+                """;
+
+        try (Connection conexion = ConexionBD.obtenerConexion();
+             PreparedStatement statement =
+                     conexion.prepareStatement(sql)) {
+
+            statement.setString(1, producto.getNombre());
+            statement.setDouble(2, producto.getPrecio());
+            statement.setInt(3, producto.getCantidad());
+            statement.setInt(4, producto.getId());
+
+            int filas = statement.executeUpdate();
+
+            return filas > 0;
+        } catch (SQLException e) {
+
+
+            System.out.println("Error al actualizar producto:");
+            System.out.println(e.getMessage());
+
+            return false;
+        }
+    }
+
+    // ELIMINAR .
 }
