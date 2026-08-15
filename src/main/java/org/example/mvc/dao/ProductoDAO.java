@@ -105,5 +105,5 @@ public class ProductoDAO  {
         return null;
     }
 
-    // ACTUALIZAR .
+    // ACTUALIZAR.
 }
