@@ -137,4 +137,28 @@ public class ProductoDAO  {
     }
 
     // ELIMINAR .
-}
+    public boolean eliminar(int id) {
+
+        String sql = """
+                DELETE FROM productos
+                WHERE id = ?
+                """;
+
+        try (Connection conexion =  ConexionBD.obtenerConexion();
+             PreparedStatement statement =
+                     conexion.prepareStatement(sql)) {
+
+            statement.setInt(1, id);
+
+            int filas = statement.executeUpdate();
+
+            return filas > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar producto:");
+            System.out.println(e.getMessage());
+
+            return false;
+        }
+    }
+}   
