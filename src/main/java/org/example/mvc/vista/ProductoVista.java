@@ -101,6 +101,40 @@ public class ProductoVista {
         System.out.println("Cantidad: " + producto.getCantidad());
     }
 
-    
+    public void mostrarProductos(List<Producto> productos) {
+
+        System.out.println();
+        System.out.println("LISTADO DE PRODUCTOS");
+        System.out.println("--------------------");
+
+        if (productos.isEmpty()) {
+            System.out.println("No existen productos!");
+
+            return;
+        }
+
+        System.out.printf(
+                "%-5s %-25s %-15s %-10s%n",
+                "ID",
+                "NOMBRE",
+                "PRECIO",
+                "CANTIDAD"
+        );
+
+        System.out.println(
+                "------------------------------------------------------------"
+        );
+
+        for (Producto producto : productos) {
+
+            System.out.printf(
+                    "%-5d %-25s $%-14.2f %-10d%n",
+                    producto.getId(),
+                    producto.getNombre(),
+                    producto.getPrecio(),
+                    producto.getCantidad()
+            );
+        }
+    }   
 }
 
