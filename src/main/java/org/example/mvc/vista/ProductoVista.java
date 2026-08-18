@@ -63,5 +63,23 @@ public class ProductoVista {
 
         return Integer.parseInt(scanner.nextLine());
     }
+
+    public Producto solicitarDatosActualizacion(int id) {
+
+        System.out.println();
+        System.out.println("ACTUALIZAR PRODUCTO");
+        System.out.println("-------------------");
+
+        System.out.print("Nuevo nombre: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Nuevo precio: ");
+        double precio = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Nueva cantidad: ");
+        int cantidad = Integer.parseInt(scanner.nextLine());
+
+        return new Producto(id, nombre, precio, cantidad);
+    }   
 }
 
