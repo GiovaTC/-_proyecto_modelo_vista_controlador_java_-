@@ -135,6 +135,17 @@ public class ProductoVista {
                     producto.getCantidad()
             );
         }
-    }   
-}
+    }
+
+    public void mostrarMensaje(String mensaje) {
+
+        System.out.println();
+        System.out.println(mensaje);
+    }
+
+    public void cerrarScanner() {
+
+        scanner.close();
+    }
+}   
 
