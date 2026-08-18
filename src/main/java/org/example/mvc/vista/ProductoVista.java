@@ -80,6 +80,27 @@ public class ProductoVista {
         int cantidad = Integer.parseInt(scanner.nextLine());
 
         return new Producto(id, nombre, precio, cantidad);
-    }   
+    }
+
+    public void mostrarProducto(Producto producto) {
+
+        if (producto == null) {
+
+            System.out.println();
+            System.out.println("Producto no encontrado. ");
+
+            return;
+        }
+
+        System.out.println();
+        System.out.println("PRODUCTO ENCONTRADO");
+        System.out.println("-------------------");
+        System.out.println("ID:       " + producto.getId());
+        System.out.println("Nombre:   " + producto.getNombre());
+        System.out.println("Precio:   $" + producto.getPrecio());
+        System.out.println("Cantidad: " + producto.getCantidad());
+    }
+
+    
 }
 
