@@ -2,6 +2,8 @@
 
 <img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/ff1f538e-9c7b-40b4-820a-7419b8ee58b2" />
 
+<img width="681" height="767" alt="image" src="https://github.com/user-attachments/assets/7ee8d7fb-93c6-4b4f-b275-6d71d7b661d2" />    
+
 ```
 
 proyecto completo MVC en Java 21 + IntelliJ IDEA + Maven + MySQL 8 + JDBC, utilizando una aplicación de consola para administrar productos.
