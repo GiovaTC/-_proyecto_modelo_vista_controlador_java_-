@@ -1,5 +1,7 @@
 package org.example.mvc.vista;
 
+import org.example.mvc.modelo.Producto;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,5 +40,28 @@ public class ProductoVista {
         }
     }
 
-    
+    public Producto solicitarProducto() {
+
+        System.out.println();
+        System.out.println("REGISTRAR PRODUCTO");
+        System.out.println("------------------");
+
+        System.out.print("Nombre: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Precio: ");
+        double precio = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("Cantidad: ");
+        int cantidad = Integer.parseInt(scanner.nextLine());
+
+        return new Producto(nombre, precio, cantidad);
+    }
+
+    public int solicitarId() {
+        System.out.print("ingrese el ID del PRODUCTO: ");
+
+        return Integer.parseInt(scanner.nextLine());
+    }
 }
+
